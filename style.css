@@ -112,4 +112,20 @@ body,
     background-color: #2374e1;
     text-align: center;
     padding: var(--gutter);
+    display: flex;
+    justify-content: center;
+}
+
+.table__head__title {
+    display: inline-block;
+    width: 100%;
+    color: white;
+    font-size: var(--font-size-38);
+}
+
+.table__head__button {
+    border: 0.1rem solid black;
+    background-color: white;
+    display: inline-block;
+    margin-left: auto;
 }
