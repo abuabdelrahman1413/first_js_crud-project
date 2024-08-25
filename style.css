@@ -92,6 +92,7 @@ body,
 }
 
 .container {
+    
     margin: 0 auto;
     max-width: calc(var(--container-width) + var(--gutter) * 2);
     padding-inline: var(--gutter);
