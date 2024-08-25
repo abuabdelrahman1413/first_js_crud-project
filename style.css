@@ -108,7 +108,7 @@ body,
     height: 50vh;
 }
 
-.table_head {
+.table__head {
     background-color: #2374e1;
     text-align: center;
     padding: var(--gutter);
