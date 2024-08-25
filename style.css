@@ -96,5 +96,20 @@ body,
     margin: 0 auto;
     max-width: calc(var(--container-width) + var(--gutter) * 2);
     padding-inline: var(--gutter);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 /* End Genral */
+
+.table {
+    background-color: #ff5500;
+    width: 60%;
+    height: 50vh;
+}
+
+.table_head {
+    background-color: #2374e1;
+    text-align: center;
+    padding: var(--gutter);
+}
