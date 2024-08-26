@@ -59,6 +59,7 @@ function addTask() {
   };
 
   tasksList.push(taskObject);
+  localStorage.setItem('tasks', tasksList);
   renderTasks();
 }
 
