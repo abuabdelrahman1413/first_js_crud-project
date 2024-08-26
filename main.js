@@ -63,7 +63,7 @@ function deleteTask(index) {
 }
 
 function updateTask(index) {
-  let newTitle = prompt('أدخل عنوان المهمة الجديد');
+  let newTitle = prompt('أدخل عنوان المهمة الجديد', tasksList[index].title);
   let now = new Date();
   let newDate =
     now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear();
