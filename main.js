@@ -6,6 +6,7 @@ let addTaskButton = document.getElementById('add_btn');
 // Functions
 function renderTasks() {
   tasksListElement.innerHTML = '';
+  let index = 0;
 
   for (task of tasksList) {
     let content = `
@@ -18,13 +19,13 @@ function renderTasks() {
       </span>
     </div>
     <div class="task__actions">
-      <button class="circular_button delete_btn">
+      <button onclick="deleteTask(${index})" class="circular_button delete_btn">
         <span class="material-symbols-outlined"> delete </span>
       </button>
       <button class="circular_button create_btn">
         <span class="material-symbols-outlined"> check </span>
       </button>
-      <button class="circular_button update_btn">
+      <button onclick = "(updateTask(${index}))" class="circular_button update_btn">
         <span class="material-symbols-outlined"> edit </span>
       </button>
     </div>
@@ -33,6 +34,7 @@ function renderTasks() {
 `;
 
     tasksListElement.innerHTML += content;
+    index++;
   }
 }
 
@@ -49,6 +51,25 @@ function addTask() {
   };
 
   tasksList.push(taskObject);
+  renderTasks();
+}
+
+function deleteTask(index) {
+  let isConfirmed = confirm('هل تريد حذف المهمة؟');
+  if (isConfirmed) {
+    tasksList.splice(index, 1);
+    renderTasks();
+  }
+}
+
+function updateTask(index) {
+  let newTitle = prompt('أدخل عنوان المهمة الجديد');
+  let now = new Date();
+  let newDate =
+    now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear();
+  tasksList[index].title = newTitle;
+  tasksList[index].date = newDate;
+
   renderTasks();
 }
 
