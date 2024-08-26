@@ -1,8 +1,9 @@
+// Variables
 let tasksList = [];
-
 let tasksListElement = document.getElementById('tasks_area');
 let addTaskButton = document.getElementById('add_btn');
 
+// Functions
 function renderTasks() {
   tasksListElement.innerHTML = '';
 
@@ -51,4 +52,5 @@ function addTask() {
   renderTasks();
 }
 
+// Events
 addTaskButton.addEventListener('click', addTask);
