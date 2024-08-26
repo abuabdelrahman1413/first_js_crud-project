@@ -1,8 +1,10 @@
 // Variables
 let tasksList = [];
+tasksList = JSON.parse(localStorage.getItem("tasks"))
 let tasksListElement = document.getElementById('tasks_area');
 let addTaskButton = document.getElementById('add_btn');
 
+renderTasks();
 // Functions
 function renderTasks() {
   tasksListElement.innerHTML = '';
@@ -68,6 +70,8 @@ function deleteTask(index) {
   let isConfirmed = confirm('هل تريد حذف المهمة؟');
   if (isConfirmed) {
     tasksList.splice(index, 1);
+    let taskJson = JSON.stringify(tasksList);
+    localStorage.setItem('tasks', taskJson);
     renderTasks();
   }
 }
@@ -79,6 +83,8 @@ function updateTask(index) {
     now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear();
   tasksList[index].title = newTitle;
   tasksList[index].date = newDate;
+  let taskJson = JSON.stringify(tasksList);
+  localStorage.setItem('tasks', taskJson);
 
   renderTasks();
 }
@@ -86,9 +92,13 @@ function updateTask(index) {
 function toggleTaskCompleation(index) {
   if (tasksList[index].isDone) {
     tasksList[index].isDone = false;
+    let taskJson = JSON.stringify(tasksList);
+    localStorage.setItem('tasks', taskJson);
     renderTasks();
   } else {
     tasksList[index].isDone = true;
+    let taskJson = JSON.stringify(tasksList);
+    localStorage.setItem('tasks', taskJson);
     renderTasks();
   }
 }
