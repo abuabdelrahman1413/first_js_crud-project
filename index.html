@@ -5,15 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
+
+    <!--External libraries-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!--End of external libraries-->
   </head>
   <body>
     <div class="container">
       <section class="table">
         <!-- Your table content goes here -->
         <header class="table__head">
+          <button class="table__head__button circular_button">
+            <span class="material-symbols-outlined"> add </span>
+          </button>
+
           <h1 class="table__head__title">مهامي</h1>
-          <button class="table__head__button">ADD</button>
         </header>
+
+        <div class="task">
+          <div class="task__details">
+            <h1 class="task__title">قراءة كتاب</h1>
+            <span style="display: block"
+              ><span class="material-symbols-outlined"> calendar_month </span>
+              25/8/2024
+            </span>
+          </div>
+          <div class="task__actions">
+            <button class="circular_button delete_btn">
+              <span class="material-symbols-outlined"> delete </span>
+            </button>
+            <button class="circular_button create_btn">
+              <span class="material-symbols-outlined"> check </span>
+            </button>
+            <button class="circular_button update_btn">
+              <span class="material-symbols-outlined"> edit </span>
+            </button>
+          </div>
+        </div>
+
+        <script src="./main.js"></script>
       </section>
     </div>
   </body>

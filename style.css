@@ -67,6 +67,7 @@ button {
     border: none;
     cursor: pointer;
     border: 0;
+    color: white;
 }
 
 ul,
@@ -89,43 +90,100 @@ body,
     background-color: var(--color-background);
     color: var(--color-text);
     border: 0;
+    font-family: 'Tajawal', sans-serif;
 }
 
 .container {
     
-    margin: 0 auto;
-    max-width: calc(var(--container-width) + var(--gutter) * 2);
-    padding-inline: var(--gutter);
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    direction: rtl;
+    background-color: rgb(59, 11, 104);
 }
 /* End Genral */
 
 .table {
-    background-color: #ff5500;
+    background-color: rgba(255, 255, 255, 0.904);
     width: 60%;
-    height: 50vh;
+    margin-top: 13rem;
 }
 
 .table__head {
-    background-color: #2374e1;
-    text-align: center;
-    padding: var(--gutter);
+    background-color: rgb(107, 21, 187);
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
 
 .table__head__title {
-    display: inline-block;
     width: 100%;
     color: white;
-    font-size: var(--font-size-38);
+    font-size: var(--font-size-24);
+    text-align: center;
 }
 
 .table__head__button {
-    border: 0.1rem solid black;
     background-color: white;
-    display: inline-block;
-    margin-left: auto;
+    margin-right: auto;
+    /* Add more properties to create a nicer shadow effect */
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.3), 0 0 2rem rgba(0, 0, 0, 0.4);
+    color: black;
+    margin-right: 1rem;
+}
+
+.circular_button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    line-height: 0;
+}
+
+
+.task {
+    display: flex;
+    background-color: white;
+    width: 98%;
+    margin: 0.5rem auto;
+    border-bottom: .1rem solid black;
+}
+.task:hover {
+box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.task__details {
+    width: 70%;
+    padding: var(--gutter);
+}
+
+.task__title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+
+
+.task__actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 20%;
+    padding: var(--gutter);
+}
+
+.delete_btn {
+    background-color: red;
+}
+
+.create_btn {
+    background-color: var(--color-blue);
+}
+
+.update_btn {
+    background-color: greenyellow;
 }
