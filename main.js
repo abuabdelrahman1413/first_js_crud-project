@@ -50,20 +50,21 @@ function renderTasks() {
 
 function addTask() {
   let taskTitle = prompt('أدخل عنوان المهمة');
-  let now = new Date();
-  let taskDate =
-    now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear();
-
-  let taskObject = {
-    title: taskTitle,
-    date: taskDate,
-    isDone: false,
-  };
-
-  tasksList.push(taskObject);
-  let taskJson = JSON.stringify(tasksList);
-  localStorage.setItem('tasks', taskJson);
-  renderTasks();
+  if (taskTitle) {
+    let now = new Date();
+    let taskDate =
+      now.getDate() + '/' + (now.getMonth() + 1) + '/' + now.getFullYear();
+  
+    let taskObject = {
+      title: taskTitle,
+      date: taskDate,
+      isDone: false,
+    };
+    tasksList.push(taskObject);
+    let taskJson = JSON.stringify(tasksList);
+    localStorage.setItem('tasks', taskJson);
+    renderTasks();
+  }
 }
 
 function deleteTask(index) {
