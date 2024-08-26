@@ -91,12 +91,13 @@ body,
     color: var(--color-text);
     border: 0;
     font-family: 'Tajawal', sans-serif;
+    height: 100vh;
 }
 
 .container {
     
-    height: 100vh;
     display: flex;
+    height: 100%;
     justify-content: center;
     direction: rtl;
     background-color: rgb(59, 11, 104);
@@ -107,6 +108,7 @@ body,
     background-color: rgba(255, 255, 255, 0.904);
     width: 60%;
     margin-top: 13rem;
+    height: fit-content;
 }
 
 .table__head {
@@ -145,13 +147,19 @@ body,
     height: auto;
 }
 
-#tasks {
+.tasks {
     display: flex;
+    /* background-color: rgb(158, 253, 160); */
     background-color: white;
     width: 98%;
     margin: 0.5rem auto;
     border-bottom: .1rem solid black;
 }
+
+.done {
+    background-color: rgb(158, 253, 160);
+}
+
 #tasks:hover {
 box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
 }
@@ -187,6 +195,14 @@ box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
     background-color: var(--color-blue);
 }
 
+.cancel {
+    background-color: rgb(59, 11, 104);
+}
+
+.check {
+    background-color: green;
+}
+
 .update_btn {
-    background-color: greenyellow;
+    background-color: var(--color-blue);
 }

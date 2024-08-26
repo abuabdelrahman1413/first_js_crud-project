@@ -10,7 +10,7 @@ function renderTasks() {
 
   for (task of tasksList) {
     let content = `
-  <div id="tasks">
+  <div class="tasks ${task.isDone ? 'done' : ''}">
     <div class="task__details">
       <h1 class="task__title">${task.title}</h1>
       <span style="display: block">
@@ -22,10 +22,18 @@ function renderTasks() {
       <button onclick="deleteTask(${index})" class="circular_button delete_btn">
         <span class="material-symbols-outlined"> delete </span>
       </button>
-      <button class="circular_button create_btn">
-        <span class="material-symbols-outlined"> check </span>
-      </button>
-      <button onclick = "(updateTask(${index}))" class="circular_button update_btn">
+  
+      ${
+        task.isDone
+          ? `      <button onclick="toggleTaskCompleation(${index})" class="circular_button create_btn cancel">
+            <span class="material-symbols-outlined"> cancel </span>
+          </button>`
+          : `      <button onclick="toggleTaskCompleation(${index})" class="circular_button create_btn check">
+            <span class="material-symbols-outlined"> check </span>
+          </button>`
+      }
+  
+      <button onclick="(updateTask(${index}))" class="circular_button update_btn">
         <span class="material-symbols-outlined"> edit </span>
       </button>
     </div>
@@ -71,6 +79,16 @@ function updateTask(index) {
   tasksList[index].date = newDate;
 
   renderTasks();
+}
+
+function toggleTaskCompleation(index) {
+  if (tasksList[index].isDone) {
+    tasksList[index].isDone = false;
+    renderTasks();
+  } else {
+    tasksList[index].isDone = true;
+    renderTasks();
+  }
 }
 
 // Events
