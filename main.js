@@ -59,7 +59,8 @@ function addTask() {
   };
 
   tasksList.push(taskObject);
-  localStorage.setItem('tasks', tasksList);
+  let taskJson = JSON.stringify(tasksList);
+  localStorage.setItem('tasks', taskJson);
   renderTasks();
 }
 
