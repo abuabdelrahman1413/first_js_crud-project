@@ -141,15 +141,18 @@ body,
     line-height: 0;
 }
 
+#tasks_area {
+    height: auto;
+}
 
-.task {
+#tasks {
     display: flex;
     background-color: white;
     width: 98%;
     margin: 0.5rem auto;
     border-bottom: .1rem solid black;
 }
-.task:hover {
+#tasks:hover {
 box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
 }
 
